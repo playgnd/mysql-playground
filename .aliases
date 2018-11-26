@@ -3,7 +3,7 @@
 # or visit https://github.com/sebglazebrook/aliases
 
 start-server:
-  command: docker run -ti --name playground-mysql-server -e MYSQL_ROOT_PASSWORD=my-secret-pw --rm -d -v ${PWD}/my.cnf:/root/.my.cnf $([ -a ${HOME}/.editrc ] && echo "-v ${HOME}/.editrc:/root/.editrc:ro") mysql:latest
+  command: docker run -ti --name playground-mysql-server -e MYSQL_ROOT_PASSWORD=my-secret-pw --rm -d -v ${PWD}/my.cnf:/root/.my.cnf $([ -a ${HOME}/.editrc ] && echo "-v ${HOME}/.editrc:/root/.editrc:ro") -v ${PWD}/data/mysql_history:/root/.mysql_history  mysql:latest
 start-client:
   command: docker exec -it playground-mysql-server mysql
 cleanup:
