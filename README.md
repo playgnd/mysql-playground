@@ -18,7 +18,7 @@ aliases init
 aliases rehash
 ```
 
-2. List out the aliases new aliases available
+2. List out the aliases you have available
 
 ```
 aliases list --local
